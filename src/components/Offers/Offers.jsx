@@ -2,8 +2,8 @@ import React from 'react'
 
 export default function Offers() {
   return (
-    <section>
+    <div>
       Offers
-    </section>
+    </div>
   )
 }

@@ -2,7 +2,7 @@ import React from 'react'
 
 function Divider() {
   return (
-    <section>Divider</section>
+    <div>Divider</div>
   )
   }
 export default Divider
