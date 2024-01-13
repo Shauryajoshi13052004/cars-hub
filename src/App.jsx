@@ -11,14 +11,24 @@ function App() {
   
   return (
   <>
-    <section>
+    
       <Banner/>
-      <Category/>
+   <div className="grid pt-9 justify-around w-screen">
+   <div className="grid justify-around grid-cols-6 xl:grid-cols-6 sm:grid-cols-2 lg:grid-cols-6 gap-4 place-items-center ">
+   <Category />
+   <Category />
+   <Category />
+   <Category />
+   <Category />
+   <Category />
+   </div>
+   </div>
+
       <Top_sales/>
       <Blog/>
       <Offers/>
       <Divider/>
-    </section>
+   
   </>
     )
 }

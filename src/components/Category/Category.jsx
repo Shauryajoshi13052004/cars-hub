@@ -1,9 +1,15 @@
 import React from 'react'
 
-export default function Category() {
+
+
+function Category() {
   return (
-    <section>
-        Category123
-        </section>
-  )
+<section>
+    <div className="p-4 text-center bg-black w-40 h-52 rounded" >
+
+    </div>
+</section>  
+)
 }
+
+export default Category
