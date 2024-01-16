@@ -34,6 +34,7 @@ export default function Banner() {
         
         <SwiperSlide>
         <img src='../../public/images/images/banner2.webp'/>
+          
             </SwiperSlide>
         <SwiperSlide>
         <img src='../../public/images/images/banner3.webp'/>
