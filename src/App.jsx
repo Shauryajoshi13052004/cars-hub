@@ -9,7 +9,7 @@ import Divider from './components/Divider/Divider'
 import Footer from './components/Footer/Footer'
 import Card from './components/Card/Card'
 import About from './components/About/About'
-
+import Review2 from './components/Review2/Review2'
 function App() {
 
    return (
@@ -23,8 +23,10 @@ function App() {
          {/* <Top_sales/> */}
          <Offers/>
          <Divider />
+         <Review2/>
          <Footer />
-         {/* <About/> */}
+         <About/>
+         <Top_sales/>
          </div>
       </>
    )
