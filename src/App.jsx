@@ -8,21 +8,26 @@ import Offers from './components/Offers/Offers'
 import Divider from './components/Divider/Divider'
 import Footer from './components/Footer/Footer'
 import Card from './components/Card/Card'
+import About from './components/About/About'
 
 function App() {
-  
-  return (
-  <>
-    
-      {/* <Banner/>
 
-   <Category />
-
-      <Divider/>
-      <Footer/> */}
-   <Card/>
-  </>
-    )
+   return (
+      <>
+<div className='bg-white w-screen'>
+        
+      
+         <Banner />
+         <Category />
+         <Card />
+         {/* <Top_sales/> */}
+         <Offers/>
+         <Divider />
+         <Footer />
+         {/* <About/> */}
+         </div>
+      </>
+   )
 }
 
 export default App

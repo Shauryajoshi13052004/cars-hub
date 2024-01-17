@@ -19,7 +19,7 @@ const Divider = () => {
               </p>
               <button
                 type="button"
-                className="  pt-1 mt-3 rounded-2xl pr-6 pb-1 pl-6 w-44 text-white hover:bg-black h-12  bg-orange-600"
+                className="  pt-1 mt-3 rounded-2xl pr-6 pb-1 border-white pl-6 w-44 text-white hover:bg-black h-12  bg-orange-600"
               >
                 Buy Car
               </button>
