@@ -23,7 +23,7 @@ const Card = ({ variant }) => {
 
     return (
         <>
-            <h1 className='font-semibold text-2xl my-5 justify-center flex'>Cars Hub</h1>
+            <h1 className='font-semibold text-2xl my-5 justify-center flex'>New Cars</h1>
         <div className='flex   justify-center gap-2'>
         <div className='grid gap-3 grid-cols-1 sm:grid-cols-2 md:grid-cols-3'>
             <div className={clsx("max-w-sm rounded  h transition-all overflow-hidden  shadow-md p-6 mb-6 ",{ 

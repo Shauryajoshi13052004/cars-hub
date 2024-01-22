@@ -2,11 +2,15 @@ import React from 'react'
 import ReactDOM from 'react-dom/client'
 import App from './App.jsx'
 import './index.css'
-import Navbar2 from './components/Navbar2/Navbar2.jsx'
+import Navbar from './components/Navbar/Navbar.jsx'
+import Divider from './components/Divider/Divider.jsx'
+import Footer from './components/Footer/Footer.jsx'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
-  <React.StrictMode>
-    <Navbar2/>
+  <>
+    <Navbar/>
     <App />
-  </React.StrictMode>,
+    <Divider/>
+    <Footer/>
+  </>
 )

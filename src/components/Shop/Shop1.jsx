@@ -90,7 +90,7 @@ const Top_sales1 = () => {
               <div className="pt-4">
                 <button
                   type="button"
-                  className="py-2 px-4 text-white hover:bg-orange-600 bg-slate-900 rounded-md font-semibold"
+                  className="py-2 px-4 text-white hover:bg-black bg-blue-600 rounded-md font-semibold"
                 >
                   Filter
                 </button>
