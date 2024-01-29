@@ -2,6 +2,8 @@ import React from 'react'
 
 const About = () => {
   return (
+    <>
+    
     <div>
        <div className="flex p-10">
             <div className="w-1/2">
@@ -19,6 +21,7 @@ const About = () => {
             </div>
         </div>
     </div>
+    </>
   )
 }
 
