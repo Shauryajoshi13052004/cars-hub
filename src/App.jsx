@@ -11,6 +11,7 @@ import Card from './components/Card/Card'
 import About from './components/About/About'
 import Review2 from './components/Review2/Review2'
 import Navbar from './components/Navbar/Navbar'
+import Home from './Home'
 function App() {
 
    return (
@@ -22,6 +23,7 @@ function App() {
          <Card />
          <Offers/>
          <Review2/> */}
+         {/* <Home/> */}
          </div>
       </>
    )
