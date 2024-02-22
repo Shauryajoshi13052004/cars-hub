@@ -9,7 +9,7 @@ export default function Top_sales() {
         <h1 className='flex flex-wrap text-[55px]'>Shop</h1>
         <ul className='flex flex-wrap gap-4'>
             <li>
-             <a href='http://localhost:5173/home'>Home
+             <a href='/'>Home
              </a> 
              </li>
             <li> &#62; </li>
