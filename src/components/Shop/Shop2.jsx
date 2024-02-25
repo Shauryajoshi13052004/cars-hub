@@ -1,5 +1,6 @@
 import React from 'react'
 import clsx from 'clsx'
+import { Link } from 'react-router-dom';
 let isRed = false;
 
 function changeColor() {
@@ -48,7 +49,7 @@ const Card = ({ variant }) => {
                         Rupa Renaissance, Navi Mumbai</div>
                 </div>
             </div>
-
+<Link to="/singlepage/:id">
             <div className="max-w-sm rounded    transition-all overflow-hidden  shadow-md p-6 mb-6 ">
                 <img className="w-full" src='public/images/images/cars/honda/42 (2).webp' alt="2016 Volkswagen Ameo" />
                 <div className="px-6 py-4 flex flex-col gap-2">
@@ -68,7 +69,7 @@ const Card = ({ variant }) => {
 
                         Rupa Renaissance, Juni Mumbai</div>
                 </div>
-            </div>
+            </div></Link>
 
             <div className="max-w-sm rounded    transition-all overflow-hidden  shadow-md p-6 mb-6 ">
                 <img className="w-full" src='public/images/images/cars/jeep/43 (3).webp' alt="2016 Volkswagen Ameo" />

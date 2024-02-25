@@ -12,20 +12,15 @@ import About from './components/About/About'
 import Review2 from './components/Review2/Review2'
 import Navbar from './components/Navbar/Navbar'
 import Home from './Home'
+import Cart from './Cart/Cart'
+
+
 function App() {
 
    return (
       <>
-<div className='bg-white w-screen'>
-{/*         
-         <Banner />
-         <Category />
-         <Card />
-         <Offers/>
-         <Review2/> */}
-         {/* <Home/> */}
-         </div>
-      </>
+      
+   </>
    )
 }
 
