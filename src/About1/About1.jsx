@@ -1,4 +1,6 @@
 import React from "react";
+import Divider from "../components/Divider/Divider";
+import Footer from "../components/Footer/Footer";
 
 const About1 = () => {
   return (
@@ -657,6 +659,8 @@ const About1 = () => {
           </div>
         </div>
       </section>
+      <Divider/>
+    <Footer/>
     </>
   );
 };

@@ -1,4 +1,6 @@
 import React from 'react'
+import Divider from '../components/Divider/Divider'
+import Footer from '../components/Footer/Footer'
 
 export default function Contact() {
   return (
@@ -34,25 +36,26 @@ export default function Contact() {
           <div className="block rounded-lg bg-[hsla(0,0%,100%,0.8)] px-6 py-12 shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)]  md:py-16 md:px-12 -mt-[100px] backdrop-blur-[30px] border border-gray-300">
             <div className="flex flex-wrap">
               <div className="mb-12 w-full shrink-0 grow-0 basis-auto md:px-3 lg:mb-0 lg:w-5/12 lg:px-6">
-                <form>
+                <form action='https://formspree.io/f/xgegyoal'
+                method='post'>
                   <div className="relative mb-6" data-te-input-wrapper-init>
                     <label className="block font-medium mb-[2px] text-teal-700 " htmlFor="exampleInput90">
                       Name
                     </label>
-                    <input type="text" className="px-2 py-2 border w-full outline-none rounded-md" id="exampleInput90" placeholder="Name" />
+                    <input type="text" name='username'required className="px-2 py-2 border w-full outline-none rounded-md" id="exampleInput90" placeholder="Name" />
                   </div>
                   <div className="relative mb-6" data-te-input-wrapper-init>
-                    <label className="block font-medium mb-[2px] text-teal-700" htmlFor="exampleInput90">
+                    <label required className="block font-medium mb-[2px]  text-teal-700" htmlFor="exampleInput90">
                       Email
                     </label>
-                    <input type="email" className="px-2 py-2 border w-full outline-none rounded-md" id="exampleInput90"
+                    <input type="email" name='email' className="px-2 py-2 border w-full outline-none rounded-md" id="exampleInput90"
                       placeholder="Enter your email address" />
                   </div>
                   <div className="relative mb-6" data-te-input-wrapper-init>
                   <label className="block font-medium mb-[2px] text-teal-700" htmlFor="exampleInput90">
                             Message
                     </label>
-                    <textarea className="px-2 py-2 border rounded-[5px] w-full outline-none" name="" id=""></textarea>
+                    <textarea required className="px-2 py-2 border rounded-[5px] w-full outline-none" name="" id=""></textarea>
                   </div>
                   <div className="mb-6 inline-block min-h-[1.5rem] justify-center pl-[1.5rem] md:flex">
                     <input className="relative float-left mt-[0.15rem] mr-[6px] -ml-[1.5rem] h-[1.125rem] w-[1.125rem] appearance-none rounded-[0.25rem] border-[0.125rem] border-solid border-neutral-300 outline-none before:pointer-events-none before:absolute before:h-[0.875rem] before:w-[0.875rem] before:scale-0 before:rounded-full before:bg-transparent before:opacity-0 before:shadow-[0px_0px_0px_13px_transparent] before:content-[''] checked:border-primary checked:bg-primary checked:before:opacity-[0.16] checked:after:absolute checked:after:ml-[0.25rem] checked:after:-mt-px checked:after:block checked:after:h-[0.8125rem] checked:after:w-[0.375rem] checked:after:rotate-45 checked:after:border-[0.125rem] checked:after:border-t-0 checked:after:border-l-0 checked:after:border-solid checked:after:border-white checked:after:bg-transparent checked:after:content-[''] hover:cursor-pointer hover:before:opacity-[0.04] hover:before:shadow-[0px_0px_0px_13px_rgba(0,0,0,0.6)] focus:shadow-none focus:transition-[border-color_0.2s] focus:before:scale-100 focus:before:opacity-[0.12] focus:before:shadow-[0px_0px_0px_13px_rgba(0,0,0,0.6)] focus:before:transition-[box-shadow_0.2s,transform_0.2s] focus:after:absolute focus:after:z-[1] focus:after:block focus:after:h-[0.875rem] focus:after:w-[0.875rem] focus:after:rounded-[0.125rem] focus:after:content-[''] checked:focus:before:scale-100 checked:focus:before:shadow-[0px_0px_0px_13px_#3b71ca] checked:focus:before:transition-[box-shadow_0.2s,transform_0.2s] checked:focus:after:ml-[0.25rem] checked:focus:after:-mt-px checked:focus:after:h-[0.8125rem] checked:focus:after:w-[0.375rem] checked:focus:after:rotate-45 checked:focus:after:rounded-none checked:focus:after:border-[0.125rem] checked:focus:after:border-t-0 checked:focus:after:border-l-0 checked:focus:after:border-solid checked:focus:after:border-white checked:focus:after:bg-transparent " type="checkbox" defaultValue id="exampleCheck96" defaultChecked />
@@ -60,9 +63,8 @@ export default function Contact() {
                       Send me a copy of this message
                     </label>
                   </div>
-                  <button type="button" className="mb-6 w-full rounded bg-sky-500 text-white px-6 pt-2.5 pb-2 text-xs font-medium uppercase leading-normal   lg:mb-0">
-                    Send
-                  </button>
+                  <input type='submit' value="send"className="mb-6 w-full rounded hover:bg-sky-300 bg-sky-500 text-white px-6 pt-2.5 pb-2 text-xs font-medium uppercase leading-normal   lg:mb-0"/>               
+                 
                 </form>
               </div>
               <div className="w-full shrink-0 grow-0 basis-auto lg:w-7/12">
@@ -149,6 +151,8 @@ export default function Contact() {
           </div>
         </div>
       </section>
+      <Divider/>
+    <Footer/>
       </>
   )
 }
