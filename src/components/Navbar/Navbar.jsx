@@ -11,6 +11,7 @@ import Login from '../Login/Login';
 import Cart from '../../Cart/Cart';
 import SinglePage from '../SinglePage/SinglePage';
 import Checkout from '../../Checkout/Checkout';
+import Signup from '../Signup/Signup';
 
 function Navbar() {
     const [isOpen, setIsOpen] = useState(false);
@@ -50,8 +51,8 @@ function Navbar() {
                             </div>
                             <div className="relative flex gap-3 md:mt-0">
                                 <Link to="/Cart"><FaCar className='h-6 w-6 mt-4' /></Link>
-                                <button className='bg-indigo-500  w-fit text-white mt-3 rounded px-3 py-2'><Link to="/login">Login</Link></button>
-                                <button className='bg-indigo-500  w-fit text-white mt-3 rounded px-3 py-2'>Register</button>
+                                <Link to="/login">   <button className='bg-indigo-500  w-fit text-white mt-3 rounded px-3 py-2'>Login</button></Link>
+                                <Link to="/Signup">  <button className='bg-indigo-500  w-fit text-white mt-3 rounded px-3 py-2'>Signup</button></Link>
                             </div>
                         </div>
                     </div>
@@ -62,6 +63,7 @@ function Navbar() {
                     <Route path='/shop' element={<Shop />} />
                     <Route path='/contact' element={<Contact />} />
                     <Route path='/login' element={<Login />} />
+                    <Route path='/Signup' element={<Signup/>} />
                     <Route path='/Cart' element={<Cart />} />
                     <Route path='/Checkout' element={<Checkout />} />
                     <Route path='*' element={<Error />} />
