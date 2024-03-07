@@ -12,11 +12,13 @@ import About from './components/About/About'
 import Review2 from './components/Review2/Review2'
 import Navbar from './components/Navbar/Navbar'
 import Checkout from './Checkout/Checkout'
+// import SinglePage from "./components/SinglePage/SinglePage"
 function Home() {
 
    return (
+   
       <>
-<div className='bg-white w-screen'>
+   <div className='bg-white w-screen'>
         
          <Banner />
          <div className="flex flex-col justify-center items-center pt-3">
@@ -38,6 +40,9 @@ function Home() {
          </div>
 <Divider/>
 <Footer/>
+{/* <SinglePage/> */}
+   
+    
       </>
    )
 }
