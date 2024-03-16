@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import { FaCar } from 'react-icons/fa';
-import About from '../About/About';
 import Shop from '../Shop/Shop';
 import Home from '../../Home';
 import Error from '../../Error';
@@ -12,6 +11,7 @@ import Cart from '../../Cart/Cart';
 import SinglePage from '../SinglePage/SinglePage';
 import Checkout from '../../Checkout/Checkout';
 import Signup from '../Signup/Signup';
+
 
 function Navbar() {
     const [isOpen, setIsOpen] = useState(false);
@@ -29,7 +29,7 @@ function Navbar() {
                             <Link to="/">
                                 <img className="w-auto md:h-24 h-16" src="public/images/images/logos/Logo.png" alt="" />
                             </Link>
-                            <div className="flex lg:hidden">
+                            <div className="flex md:hidden">
                                 <button
                                     onClick={toggleMenu}
                                     type="button"
@@ -63,9 +63,9 @@ function Navbar() {
                     <Route path='/shop' element={<Shop />} />
                     <Route path='/contact' element={<Contact />} />
                     <Route path='/login' element={<Login />} />
-                    <Route path='/Signup' element={<Signup/>} />
-                    <Route path='/Cart' element={<Cart />} />
-                    <Route path='/Checkout' element={<Checkout />} />
+                    <Route path='/signup' element={<Signup/>} />
+                    <Route path='/cart' element={<Cart />} />
+                    <Route path='/checkout' element={<Checkout />} />
                     <Route path='*' element={<Error />} />
                     <Route path='/singlepage/:id' element={<SinglePage />} />
                 </Routes>
