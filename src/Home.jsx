@@ -12,6 +12,7 @@ import About from './components/About/About'
 import Review2 from './components/Review2/Review2'
 import Navbar from './components/Navbar/Navbar'
 import Checkout from './Checkout/Checkout'
+// import Scroll from './components/Scrollbutton/Scroll'
 // import SinglePage from "./components/SinglePage/SinglePage"
 function Home() {
 
@@ -19,7 +20,7 @@ function Home() {
    
       <>
    <div className='bg-white w-screen'>
-        
+        {/* <Navbar/> */}
          <Banner />
          <div className="flex flex-col justify-center items-center pt-3">
          <h1 className='text-[40px] text-blue font-medium '>Category</h1>
@@ -40,8 +41,7 @@ function Home() {
          </div>
 <Divider/>
 <Footer/>
-{/* <SinglePage/> */}
-   
+
     
       </>
    )
