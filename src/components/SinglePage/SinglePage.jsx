@@ -1,22 +1,23 @@
-// import { data } from 'autoprefixer';
 import React from 'react'
+
 import  { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
-import { Button } from 'bootstrap';
-import { useThemeHook} from '../../globalcomponent/ThemeProvider';
+import { useCart } from 'react-use-cart';
+
 
 function Singleproduct() {
-    const [theme] = useThemeHook();
+  
 
-    const [car, setCars] = useState(null);
-    
+    const [car, setCars] = useState([]);
+    const { addItem } = useCart();
     const { id } = useParams(); // Get the carId from the URL params
-
-    // Fetch car data based on carId
-    // const [cars, setCars] = useState([]);
     const [images, setImages] = useState([]);   
-    // const [loading, setLoading] = useState(true);
-
+    // const history = useHistory();
+  
+    const handleAddToCart = () => {
+      addItem(car);
+      console.log(car)
+    };
     useEffect(() => {
         fetchCarData();
         fetchImageData();
@@ -112,14 +113,9 @@ console.log(images);
       {/* Additional Information */}
       <section className="additional-info">
         <h3>Specifications</h3>
-        <Button 
-                        onClick={()=>addItem(car)}
-                        className={theme? 'bg-dark-primary text-black' : 'bg-light-primary'}
-                        style={{borderRadius: '0', border: 0}}
-                    >
-                        {/* <BsCartPlus size="1.8rem"/> */}
-                        Add to cart
-                    </Button>
+  
+                    <button onClick={() => handleAddToCart(car)}>Add to Cart</button>
+
       </section>
 
     

@@ -2,24 +2,17 @@ import React from 'react'
 import './App.css'
 import Banner from './components/Banner/Banner'
 import Category from './components/Category/Category'
-import Top_sales from './components/Shop/Shop'
-import Blog from './components/Blog/Blog'
 import Offers from './components/Offers/Offers'
 import Divider from './components/Divider/Divider'
 import Footer from './components/Footer/Footer'
 import Card from './components/Card/Card'
-import About from './components/About/About'
 import Review2 from './components/Review2/Review2'
-import Navbar from './components/Navbar/Navbar'
-import Checkout from './Checkout/Checkout'
-// import Scroll from './components/Scrollbutton/Scroll'
-// import SinglePage from "./components/SinglePage/SinglePage"
 function Home() {
 
    return (
    
       <>
-   <div className='bg-white w-screen'>
+   <div className='bg-white '>
         {/* <Navbar/> */}
          <Banner />
          <div className="flex flex-col justify-center items-center pt-3">

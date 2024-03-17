@@ -6,7 +6,7 @@ import Footer from '../Footer/Footer'
 export default function Top_sales() {
   return (
     <>
-    <div className="flex flex-wrap w-screen justify-around items-center text=[#f9f9f9]">
+    <div className="flex flex-wrap  justify-around items-center text=[#f9f9f9]">
         <div className='flex flex-wrap w-screen justify-around items-center py-[76px]'>
         <h1 className='flex flex-wrap text-[55px]'>Shop</h1>
         <ul className='flex flex-wrap gap-4'>
@@ -28,15 +28,11 @@ export default function Top_sales() {
         </ul>
     </div>
     </div>
-    <div className='flex flex-wrap bg-white w-screen p-3'> 
-        <div className='w-1/5 pt-12'>
+    <div> 
+  
         <Shop1/>
-        </div>
-        <div className='w-4/5'>
-        <Shop2/>
-        </div>
-        </div>
-        <Divider/>
+  </div>
+          <Divider/>
     <Footer/>
     </>
   )
