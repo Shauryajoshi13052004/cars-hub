@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from 'react';
-import {  NavLink } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
+import { BiSearch } from 'react-icons/bi';
 
 function Card() {
     const [cars, setCars] = useState([]);
-    const [images, setImages] = useState([]);   
+    const [images, setImages] = useState([]);
     const [loading, setLoading] = useState(true);
+    const [searchInput, setSearchInput] = useState('');
 
     useEffect(() => {
         fetchCarData();
@@ -38,16 +40,51 @@ function Card() {
         }
     };
 
+    // Function to handle search input change
+    const handleSearchInputChange = (event) => {
+        setSearchInput(event.target.value);
+    };
+
+    // Filter cars based on multiple properties (make, model, year, etc.)
+    const filteredCars = cars.filter((car) =>
+        car.make.toLowerCase().includes(searchInput.toLowerCase()) ||
+        car.model.toLowerCase().includes(searchInput.toLowerCase()) ||
+        car.year.toString().includes(searchInput)
+    );
+
     return (
         <>
             <div>
-                <h1 className='font-semibold text-2xl my-5 justify-center flex'>New Cars</h1>
+                {/* <h1 className='font-semibold text-2xl my-5 justify-center flex'>New Cars</h1> */}
+                <div className='flex justify-center gap-2'>
+                    <div className='flex items-center mb-4'>
+                        <BiSearch className='mr-2' />
+                        {/* <input
+                            type='text'
+                            placeholder='Search Cars...'
+                            value={searchInput}
+                            onChange={handleSearchInputChange}
+                            className='border border-gray-400 rounded py-1 px-2'
+                        /> */}
+                        <input
+                            id="text"
+                            name="text"
+                            type="text"
+                            placeholder='Search Cars...'
+                            autoComplete="text"
+                            value={searchInput}
+                            onChange={handleSearchInputChange}
+                            required
+                            className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                        />
+                    </div>
+                </div>
                 {loading ? (
                     <p>Loading...</p>
                 ) : (
                     <div className='flex justify-center gap-2'>
                         <div className='grid gap-3 grid-cols-1 sm:grid-cols-2 md:grid-cols-3'>
-                            {cars.map((car) => {
+                            {filteredCars.map((car) => {
                                 const carImage = images.find((image) => image.carId === car.id);
 
                                 return (
@@ -86,4 +123,5 @@ function Card() {
         </>
     );
 }
-export default Card
+
+export default Card;
