@@ -11,12 +11,16 @@ function Singleproduct() {
     const [car, setCars] = useState([]);
     const { addItem } = useCart();
     const { id } = useParams(); // Get the carId from the URL params
-    const [images, setImages] = useState([]);   
+    const [images, setImages] = useState([]);  
+    const [message, setMessage] = useState('');
+
     // const history = useHistory();
   
     const handleAddToCart = () => {
       addItem(car);
       console.log(car)
+      setMessage('Car added to Test Drive');
+
     };
     useEffect(() => {
         fetchCarData();
@@ -48,78 +52,52 @@ function Singleproduct() {
         } catch (error) {
             console.error('Error fetching image data:', error);
         }
-    }; // Fetch data whenever carId changes  
+    }; 
+    const [activeImg, setActiveImage] = useState()
 
-    // Render loading if car data is not fetched yet
     if (!car) {
         return <p>Loading...</p>;
     }
 console.log(images);
     return (
 
-//         import React from 'react';
+        <div className='flex flex-col justify-center items-center lg:flex-row gap-16 lg:items-center'>
+            <div className='flex flex-col gap-6'>
 
-// const CarDetail = ({ carData }) => {
-//   const { image, name, modelYear, features, description, gallery, specs } = carData;
+      {/* {images.length > 0 && (<img src={images[0].imageUrl} alt="Main Image" />)}      */}
+      <img src={activeImg} alt="" className=' aspect-square object-cover rounded-md  '/>
+      <div className='flex flex-row justify-between gap-1 h-24 w-1/4'>
+        
+        {images.length > 0 && ( <img src={images[1].imageUrl} alt="Main Image" onClick={() => setActiveImage(images[1].imageUrl)}/>)} 
+         {images.length > 0 && (<img src={images[2].imageUrl} alt="Main Image" onClick={() => setActiveImage(images[2].imageUrl)}/>)} 
+         {images.length > 0 && (<img src={images[3].imageUrl} alt="Main Image" onClick={() => setActiveImage(images[3].imageUrl)}/>)} 
+         {images.length > 0 && (<img src={images[4].imageUrl} alt="Main Image" onClick={() => setActiveImage(images[4].imageUrl)}/>)}
+     </div>          
+                     
+                     </div>
+                     <div className='flex flex-col gap-4  lg:w-2/4'>
+                     <p className='text-gray-700 text-lg'>
+               {car.year} </p>
+                    <span className='text-3xl font-bold'>{car.make} {car.model}</span>
+                    <div className='flex gap-3 '>
+                        <div className='bg-slate-300 text-base p-2 rounded-lg font-semibold'>{car.mileage}KM</div>
+                        <div className='bg-slate-300 text-base p-2 rounded-lg font-semibold'> {car.fuel_type}</div>
+                        <div className='bg-slate-300 text-base p-2 rounded-lg font-semibold'> {car.transmission_type}</div>
 
-//   return (
-    <div className="car-detail-container">
-      {/* Header section can be replaced with your existing header component */}
-      <header>
-        {/* Your company logo and navigation */}
-      </header>
-
-      {/* Hero Section */}
-      <section className="hero">
-      {images.length > 0 && (
-                                <img src={images[0].imageUrl} alt="Main Image" />
-                            )}      </section>
-
-      {/* Car Details */}
-      <section className="car-details">
-        <h2>{car.make} - {car.year}</h2>
-        <ul className="features">
-          {/* {features.map((feature) => (
-            <li key={feature}>{feature}</li>
-          ))} */}
-        </ul>
-        <p className="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus, dicta.</p>
-      </section>
-
-      {/* Gallery */}
-      <section className="gallery">
-        <h3>Gallery</h3>
-        <div className="gallery-images">
-          {/* {gallery.map((image) => (
-            <img src={image} alt={`${name} - Additional Image`} key={image} />
-          ))} */}
-           {images.length > 0 && (
-                                <img src={images[1].imageUrl} alt="Main Image" />
-                            )} {images.length > 0 && (
-                                <img src={images[2].imageUrl} alt="Main Image" />
-                            )} {images.length > 0 && (
-                                <img src={images[3].imageUrl} alt="Main Image" />
-                            )} {images.length > 0 && (
-                                <img src={images[4].imageUrl} alt="Main Image" />
-                            )}
+                    </div>
+                
+              
+                <h6 className='text-2xl'>Rs {car.price}</h6>
+                <div className='flex flex-row items-center pt-4'>
+                   
+                    <button className='bg-blue-400 font-semibold px-5 py-2 rounded-md' onClick={() => handleAddToCart(car)}>Book Test Drive</button>
+                    
+                    {message && <p className='pl-5'>{message}</p>}
+  </div>
+            </div>
         </div>
-      </section>
-
-      {/* Call to Action */}
-      <section className="cta">
-        <button>Schedule a Test Drive</button>
-      </section>
-
-      {/* Additional Information */}
-      <section className="additional-info">
-        <h3>Specifications</h3>
-  
-                    <button onClick={() => handleAddToCart(car)}>Add to Cart</button>
-
-      </section>
-
     
-    </div>
+    
   );
 };
 
@@ -131,71 +109,3 @@ export default Singleproduct
 
 
 
-
-
-// <div>
-// <div className="container">
-//     <article className="card">
-//         <div className="card-body">
-//             <div className="row">
-//                 <aside className="col-md-6">
-//                     <article className="gallery-wrap">
-//                         <div className="card img-big-wrap">
-//                             {/* Display main image here */}
-//                             {images.length > 0 && (
-//                                 <img src={images[0].imageUrl} alt="Main Image" />
-//                             )}
-//                             </div>
-//                             <div className="card img-big-wrap">
-//                             {/* Display main image here */}
-//                             {images.length > 0 && (
-//                                 <img src={images[1].imageUrl} alt="Main Image" />
-//                             )}
-//                             </div>   <div className="card img-big-wrap">
-//                             {/* Display main image here */}
-//                             {images.length > 0 && (
-//                                 <img src={images[2].imageUrl} alt="Main Image" />
-//                             )}
-//                             </div>   <div className="card img-big-wrap">
-//                             {/* Display main image here */}
-//                             {images.length > 0 && (
-//                                 <img src={images[3].imageUrl} alt="Main Image" />
-//                             )}
-//                             </div>
-//                             <div className="card img-big-wrap">
-//                             {/* Display main image here */}
-//                             {images.length > 0 && (
-//                                 <img src={images[4].imageUrl} alt="Main Image" />
-//                             )}
-//                             </div> 
-//                     </article>
-//                 </aside>
-//                 <main className="col-md-6">
-//                     <article>
-//                         <a href="#" className="text-primary btn-link">{car.model}</a>
-//                         <h3 className="title">{car.make}</h3>
-//                         {/* Display other details of the car */}
-//                         <div>
-//                             <ul className="rating-stars">
-//                                 {/* Display rating stars here */}
-//                             </ul>
-//                             {/* Display other details like price, save for later, compare, etc. */}
-//                         </div> 
-//                         <hr />
-//                         <div className="mb-3">
-//                             <h6>Short description</h6>
-//                             <ul className="list-dots mb-0">
-//                                 {/* Display short description items here */}
-//                             </ul>
-//                         </div>
-//                         {/* Display available sizes, price, and buy/add to cart buttons */}
-//                     </article> 
-//                 </main>
-//             </div> 
-//         </div> 
-//     </article>
-//     {/* Display parameters and features */}
-// </div>
-// </div>
-// );
-// }

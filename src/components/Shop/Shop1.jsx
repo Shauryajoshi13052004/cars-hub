@@ -70,7 +70,6 @@ export default function Example() {
   return (
     <div className="bg-white">
       <div>
-        {/* Mobile filter dialog */}
         <Transition.Root show={mobileFiltersOpen} as={Fragment}>
           <Dialog as="div" className="relative z-40 lg:hidden" onClose={setMobileFiltersOpen}>
             <Transition.Child
@@ -274,10 +273,13 @@ export default function Example() {
                             ))}
                           </div>
                         </Disclosure.Panel>
-                      </>
+                        </>
                     )}
+                    
                   </Disclosure>
-                ))}
+                  
+                ))}                        <button className='bg-blue-500 w-fit text-white mt-3 rounded px-3 py-2'>Filter</button>
+
               </form>
 
               {/* Product grid */}

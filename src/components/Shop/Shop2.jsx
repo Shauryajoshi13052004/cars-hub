@@ -55,17 +55,10 @@ function Card() {
     return (
         <>
             <div>
-                {/* <h1 className='font-semibold text-2xl my-5 justify-center flex'>New Cars</h1> */}
                 <div className='flex justify-center gap-2'>
                     <div className='flex items-center mb-4'>
-                        <BiSearch className='mr-2' />
-                        {/* <input
-                            type='text'
-                            placeholder='Search Cars...'
-                            value={searchInput}
-                            onChange={handleSearchInputChange}
-                            className='border border-gray-400 rounded py-1 px-2'
-                        /> */}
+                        <BiSearch className='mr-2 h-6 w-6' />
+                        
                         <input
                             id="text"
                             name="text"
@@ -75,7 +68,7 @@ function Card() {
                             value={searchInput}
                             onChange={handleSearchInputChange}
                             required
-                            className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                            className="block w-full rounded-md border-0 py-1.5 px-6 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                         />
                     </div>
                 </div>
@@ -108,8 +101,8 @@ function Card() {
                                                     <p className="font-medium text-base"> {car.fuel_type}</p>
                                                 </div>
                                                 <div className='flex'>
-                                                    <p className='  font-semibold text-base'>Transmission Type :</p>
-                                                    <p className="font-medium text-base"> {car.transmission_type}</p>
+                                                    <p className='  font-semibold text-sm'>Transmission Type :</p>
+                                                    <p className="font-medium text-sm">  {car.transmission_type}</p>
                                                 </div>
                                             </div>
                                         </div>

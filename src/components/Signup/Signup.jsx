@@ -70,19 +70,15 @@ function SignUpForm() {
     };
 
     const redirectToLogin = () => {
+        if (!email){
+            window.prompt("enter email")
+        }
+
         window.location.href = './Login'; // Update the path as per your folder structure
     };
 
     return (
-        // <form onSubmit={handleSubmit}>
-        //     <input type="text" id="firstName" value={firstName} onChange={(e) => setFirstName(e.target.value)} placeholder="First Name" />
-        //     <input type="text" id="lastName" value={lastName} onChange={(e) => setLastName(e.target.value)} placeholder="Last Name" />
-        //     <input type="email" id="email" value={email} onChange={(e) => setEmail(e.target.value)} placeholder="Email" />
-        //     <input type="password" id="password" value={password} onChange={(e) => setPassword(e.target.value)} placeholder="Password" />
-        //     <input type="text" id="mobileNo" value={mobileNo} onChange={(e) => setMobileNo(e.target.value)} placeholder="Mobile Number" />
-        //     <button type="submit">Sign Up</button>
-        // </form>
-        // return (
+       
             <div className="min-h-screen bg-gray-50 flex flex-col justify-center py-12 sm:px-6 lg:px-8">
             <div className="sm:mx-auto sm:w-full sm:max-w-md">
                 <img className="mx-auto h-10 w-auto" src="https://www.svgrepo.com/show/301692/login.svg" alt="Workflow"/>
@@ -170,11 +166,11 @@ function SignUpForm() {
         
                         <div className="mt-6">
                             <span className="block w-full rounded-md shadow-sm">
-                   <Link to="http://localhost:5173/login"> 
-                   <button type="submit"  className="w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-blue-600 hover:bg-blue-500 focus:outline-none focus:border-indigo-700 focus:shadow-outline-indigo active:bg-indigo-700 transition duration-150 ease-in-out">
+                   {/* <Link to="/login">  */}
+                   <button type="submit" onClick={redirectToLogin}  className="w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-blue-600 hover:bg-blue-500 focus:outline-none focus:border-indigo-700 focus:shadow-outline-indigo active:bg-indigo-700 transition duration-150 ease-in-out">
                       Create account
                     </button>
-                    </Link>
+                    {/* </Link> */}
                   </span>
                         </div>
                     </form>
