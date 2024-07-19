@@ -7,11 +7,21 @@ function Card() {
     const [images, setImages] = useState([]);
     const [loading, setLoading] = useState(true);
     const [searchInput, setSearchInput] = useState('');
+    const [filteredCars, setFilteredCars] = useState([]);
 
     useEffect(() => {
         fetchCarData();
         fetchImageData();
     }, []);
+
+    useEffect(() => {
+        const filtered = cars.filter((car) =>
+            car.make.toLowerCase().includes(searchInput.toLowerCase()) ||
+            car.model.toLowerCase().includes(searchInput.toLowerCase()) ||
+            car.year.toString().includes(searchInput)
+        );
+        setFilteredCars(filtered);
+    }, [cars, searchInput]);
 
     const fetchCarData = async () => {
         try {
@@ -40,17 +50,9 @@ function Card() {
         }
     };
 
-    // Function to handle search input change
     const handleSearchInputChange = (event) => {
         setSearchInput(event.target.value);
     };
-
-    // Filter cars based on multiple properties (make, model, year, etc.)
-    const filteredCars = cars.filter((car) =>
-        car.make.toLowerCase().includes(searchInput.toLowerCase()) ||
-        car.model.toLowerCase().includes(searchInput.toLowerCase()) ||
-        car.year.toString().includes(searchInput)
-    );
 
     return (
         <>
@@ -58,7 +60,6 @@ function Card() {
                 <div className='flex justify-center gap-2'>
                     <div className='flex items-center mb-4'>
                         <BiSearch className='mr-2 h-6 w-6' />
-                        
                         <input
                             id="text"
                             name="text"
@@ -87,9 +88,7 @@ function Card() {
                                             <div className="px-6 py-4 flex flex-col gap-2">
                                                 <div className="font-bold text-xl flex justify-between">
                                                     {car.make} {car.model}
-                                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" id="svgheart" className="w-6 h-6">
-                                                        <path strokeLinecap="round" strokeLinejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z" />
-                                                    </svg>
+                                                    
                                                 </div>
                                                 <div><p className='mb-2 mt-0 font-semibold text-base'>{car.year}</p></div>
                                                 <div className='flex justify-between font-semibold'>

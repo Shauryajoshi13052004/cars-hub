@@ -7,6 +7,8 @@ import Divider from './components/Divider/Divider'
 import Footer from './components/Footer/Footer'
 import Card from './components/Card/Card'
 import Review2 from './components/Review2/Review2'
+import { Link } from 'react-router-dom'
+import Scrollbutton from './components/Scrollbutton/Scrollbutton'
 function Home() {
 
    return (
@@ -18,11 +20,11 @@ function Home() {
          <div className="flex flex-col justify-center items-center pt-3">
          <h1 className='text-[40px] text-blue font-medium '>Category</h1>
         </div> 
-         <Category />
-         <div className="flex flex-col justify-center items-center pt-3">
+        <Link to={"/shop"}> <Category /></Link> 
+         {/* <div className="flex flex-col justify-center items-center pt-3">
         <h1 className='text-[40px] text-blue font-medium '>Product Card</h1>
-        </div> 
-         <Card />
+        </div>  */}
+         {/* <Card /> */}
          <div className="flex flex-col justify-center items-center pt-3">
         <h1 className='text-[40px] text-blue font-medium '>Offers</h1>
         </div> 
@@ -32,8 +34,10 @@ function Home() {
         </div> 
          <Review2/>
          </div>
+         {/* <Scrollbutton/> */}
 <Divider/>
 <Footer/>
+
 
     
       </>

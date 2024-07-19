@@ -2,7 +2,7 @@ import React from 'react'
 
 export default function Offers() {
   return (
-    <div className='flex md:flex-col flex-row justify-center gap-5 my-3 w-screen' >
+    <div className='flex md:flex-col flex-row justify-center gap-5 my-3' >
     <div className="bg-blue-500  flex flex-col  md:block hidden flex-shrink text-white p-6 rounded-lg">
       <div className='flex'><h2 className="text-2xl font-bold mb-4">Need a car loan?</h2>
       <img src='public/images/images/small.webp'/></div>

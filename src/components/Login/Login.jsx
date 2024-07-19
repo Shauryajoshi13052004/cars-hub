@@ -3,15 +3,16 @@ import React, { useState } from 'react';
 function Login() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [error, setError] = useState('');
 
   const handleSubmit = async (event) => {
     event.preventDefault(); // Prevent default form submission
-
+  
     if (!email || !password) {
       alert('Please fill in the required field(s).');
       return;
     }
-
+  
     try {
       const response = await fetch('http://localhost:3000/user/login', {
         method: 'POST',
@@ -20,19 +21,22 @@ function Login() {
         },
         body: JSON.stringify({ email, password }),
       });
-
+  
       if (!response.ok) {
         throw new Error(response.statusText);
       }
-
+  
       const data = await response.json();
-      console.log('Login successful:', data);
+      console.log(data);
+      localStorage.setItem('userId',data.userId)
+      // Redirect to the user's profile page
       redirectToHome();
     } catch (error) {
       console.error('Login failed:', error);
       alert('Invalid email or password. Please try again.');
     }
   };
+  
 
   const redirectToHome = () => {
     // Redirect to the Home page after successful login

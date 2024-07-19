@@ -5,12 +5,12 @@ import Footer from "../components/Footer/Footer";
 const About1 = () => {
   return (
     <>
-        <div className="flex flex-wrap w-screen justify-around items-center text=[#f9f9f9]">
+        <div className="flex flex-wrap justify-around items-center text=[#f9f9f9]">
         <div className='flex flex-wrap w-screen justify-around items-center py-[76px]'>
         <h1 className='flex flex-wrap text-[55px]'>About us</h1>
         <ul className='flex flex-wrap gap-4'>
             <li>
-             <a href='/'>Home
+             <a href='/home'>Home
              </a> 
              </li>
             <li> &#62; </li>

@@ -13,13 +13,14 @@ import Review2 from './components/Review2/Review2'
 import Navbar from './components/Navbar/Navbar'
 import Home from './Home'
 import Cart from './Cart/Cart'
+import Video from "./components/Page/Video/Video";
 
 
 function App() {
 
    return (
       <>
-      {/* <Home/> */}
+ 
    </>
    )
 }
